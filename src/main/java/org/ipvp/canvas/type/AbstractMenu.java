@@ -194,12 +194,12 @@ public abstract class AbstractMenu implements Menu  {
             return;
         }
 
-        MenuHolder holder = (MenuHolder)
-                viewer.getOpenInventory().getTopInventory().getHolder();
-        holders.remove(holder);
         if (triggerCloseHandler) {
             getCloseHandler().ifPresent(h -> h.close(viewer, this));
         }
+        MenuHolder holder = (MenuHolder)
+                viewer.getOpenInventory().getTopInventory().getHolder();
+        holders.remove(holder);
     }
 
     public Set<MenuHolder> getHolders() {
